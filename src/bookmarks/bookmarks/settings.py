@@ -41,6 +41,11 @@ DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL")
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Application definition
 
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "account.authentication.EmailAuthBackend",
+]
+
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
